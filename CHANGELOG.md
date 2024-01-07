@@ -1,0 +1,5 @@
+# Changelog
+
+* 0.1.0 (2023-05-11): Initial release
+* 0.2.0 (2024-01-07): Modernize
+

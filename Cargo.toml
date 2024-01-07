@@ -1,10 +1,9 @@
 [package]
 name = "ucfirst"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Uppercase the first letter of a string"
 repository = "https://github.com/qtfkwk/ucfirst"
 license = "MIT"
-readme = "README.md"
 keywords = [ "casing", "case", "string", "capital", "uppercase" ]
 categories = [ "text-processing" ]
