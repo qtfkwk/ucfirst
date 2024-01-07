@@ -5,17 +5,9 @@ Full disclosure: this solution was shamelessly lifted from the
 [leading response over on StackOverflow][so] by [Shepmaster].
 
 ```rust
-let lc_str = "apple";
-
-// Using FromStr/parse and Display/to_string methods:
-use ucfirst::Ucfirst;
-let uc_str = lc_str.parse::<Ucfirst>().unwrap().to_string();
-assert_eq!(uc_str, "Apple");
-
-// Using ucfirst function:
 use ucfirst::ucfirst;
-let uc_str = ucfirst(lc_str);
-assert_eq!(uc_str, "Apple");
+
+assert_eq!(ucfirst("apple"), "Apple");
 ```
 
 See also the [`ccase`] CLI utility and [`convert_case`] library crates.
