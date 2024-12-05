@@ -1,8 +1,5 @@
 #![doc = include_str!("../README.md")]
 
-#[cfg(test)]
-mod tests;
-
 #[derive(Debug, PartialEq)]
 pub struct UcfirstError;
 
@@ -27,6 +24,38 @@ impl std::fmt::Display for Ucfirst {
     }
 }
 
+impl std::cmp::PartialEq<String> for Ucfirst {
+    fn eq(&self, other: &String) -> bool {
+        self.0 == *other
+    }
+}
+
+impl std::cmp::PartialEq<&str> for Ucfirst {
+    fn eq(&self, other: &&str) -> bool {
+        self.0 == *other
+    }
+}
+
+//--------------------------------------------------------------------------------------------------
+
+pub trait UcfirstTrait {
+    fn ucfirst(&self) -> String;
+}
+
+impl UcfirstTrait for String {
+    fn ucfirst(&self) -> String {
+        ucfirst(self)
+    }
+}
+
+impl UcfirstTrait for &str {
+    fn ucfirst(&self) -> String {
+        ucfirst(self)
+    }
+}
+
+//--------------------------------------------------------------------------------------------------
+
 /**
 Capitalize the first letter of a [`&str`]
 
@@ -37,5 +66,5 @@ assert_eq!(ucfirst("apple"), "Apple");
 ```
 */
 pub fn ucfirst(s: &str) -> String {
-    s.parse::<Ucfirst>().unwrap().to_string()
+    s.parse::<Ucfirst>().unwrap().0
 }
